@@ -1,6 +1,7 @@
+import sys
 import pandas as pd
 
-FILENAME = "Vert_RT_data.pkl"
+FILENAME = sys.argv[1]
 
 def fix(index):
     before = df.iloc[index-1]["Angle, theta (degrees)"]
