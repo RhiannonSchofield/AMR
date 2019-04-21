@@ -18,8 +18,10 @@ def fix(index):
 
 df = pd.read_pickle(FILENAME)
 
-slice = df.loc[df["current"] == 0.45]
-slice.iloc[26]["Angle, theta (degrees)"] = 360
+df = df.loc[df["Angle, theta (degrees)"].notnull()] 
+
+#slice = df.loc[df["current"] == 0.45]
+#slice.iloc[26]["Angle, theta (degrees)"] = 360
 
 nans = df.loc[df["Error in theta, alpha_theta (degrees)"].isnull()]
 indices = nans.index
